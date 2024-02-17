@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos Prácticos en Dart</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .banner {
+      background-image: url('https://via.placeholder.com/1500x400');
+      background-size: cover;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .banner h2, .banner p {
+      color: white;
+    }
+    .content {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Curso de Dart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="container">
+      <h2>Ejemplos Prácticos en Dart</h2>
+      <p>Explora estos 20 ejemplos prácticos para aprender Dart de manera efectiva.</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="content">
+          <ol>
+            <li><strong>Suma de dos números:</strong> <code>int resultado = 5 + 3;</code></li>
+            <li><strong>Cálculo del área de un círculo:</strong> <code>double radio = 3; double area = pi * radio * radio;</code></li>
+            <li><strong>Generación de números aleatorios:</strong> <code>import 'dart:math'; int numeroAleatorio = Random().nextInt(100);</code></li>
+            <li><strong>Uso de funciones:</strong> <code>void saludar(String nombre) { print('Hola, \$nombre'); } saludar('Juan');</code></li>
+            <li><strong>Trabajando con listas:</strong> <code>List<int> numeros = [1, 2, 3, 4, 5]; print(numeros.length);</code></li>
+            <li><strong>Iteración sobre una lista:</strong> <code>for (int numero in numeros) { print(numero); }</code></li>
+            <li><strong>Operadores lógicos:</strong> <code>bool esMayor = (5 > 3); bool esIgual = (5 == 3);</code></li>
+            <li><strong>Uso de condicionales:</strong> <code>int edad = 18; if (edad >= 18) { print('Eres mayor de edad'); } else { print('Eres menor de edad'); }</code></li>
+            <li><strong>Trabajando con mapas:</strong> <code>Map<String, String> persona = {'nombre': 'Juan', 'edad': '30'}; print(persona['nombre']);</code></li>
+            <li><strong>Creación de clases:</strong> <code>class Persona { String nombre; Persona(this.nombre); }</code></li>
+            <li><strong>Uso de clases:</strong> <code>Persona persona = Persona('Juan'); print(persona.nombre);</code></li>
+            <li><strong>Implementación de interfaces:</strong> <code>class Perro implements Animal { void emitirSonido() { print('Guau'); } }</code></li>
+            <li><strong>Lectura y escritura de archivos:</strong> <code>import 'dart:io'; File archivo = File('datos.txt'); archivo.writeAsStringSync('Hola, mundo');</code></li>
+            <li><strong>Manejo de excepciones:</strong> <code>try { int resultado = 5 ~/ 0; } catch (e) { print('Error: \$e'); }</code></li>
+            <li><strong>Uso de Future para operaciones asíncronas:</strong> <code>Future<void> esperar() async { await Future.delayed(Duration(seconds: 2)); print('Operación completada'); }</code></li>
+            <li><strong>Consumo de API REST:</strong> <code>import 'package:http/http.dart' as http; var response = await http.get(Uri.parse('https://api.example.com/data')); print('Respuesta del servidor: \$response');</code></li>
+            <li><strong>Uso de librerías externas:</strong> <code>import 'package:crypto/crypto.dart'; String hash = sha256.convert(utf8.encode('password')).toString();</code></li>
+            <li><strong>Creación de aplicaciones web con Dart y Flutter:</strong> <code>void main() { runApp(MyApp()); }</code></li>
+            <li><strong>Desarrollo de aplicaciones móviles:</strong> <code>void main() { runApp(MyApp()); }</code></li>
+            <li><strong>Implementación de animaciones:</strong> <code>import 'package:flutter/material.dart'; AnimationController controller; Animation<double> animation; controller = AnimationController(vsync: this, duration: Duration(seconds: 1)); animation = Tween(begin: 0.0, end: 1.0).animate(controller); controller.forward();</code></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.content -->
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Curso de Dart &copy; 2024</span>
+    </div>
+  </footer>
+  <!-- /.footer -->
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

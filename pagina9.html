@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manejo de Errores en Dart</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .banner {
+        background-image: url('https://img.freepik.com/fotos-premium/hombre-negocios-usando-dispositivos-tecnologia-e-iconos-interfaz-linea-delgada_117023-904.jpg');
+      background-size: cover;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .banner h2, .banner p {
+      color: white;
+    }
+    .content {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Curso de Dart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="container">
+      <h2>Manejo de Errores en Dart</h2>
+      <p>Aprende sobre cómo manejar errores y excepciones en Dart.</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="content">
+          <h3>Excepciones en Dart</h3>
+          <p>En Dart, las excepciones se utilizan para manejar errores que ocurren durante la ejecución de un programa. Puedes lanzar una excepción utilizando la palabra clave <code>throw</code> y manejarla utilizando <code>try</code>, <code>catch</code> y <code>finally</code>.</p>
+          <pre><code>// Función que lanza una excepción si el argumento es nulo
+void validarArgumento(String? argumento) {
+  if (argumento == null) {
+    throw ArgumentError('El argumento no puede ser nulo');
+  }
+}
+
+void main() {
+  try {
+    validarArgumento(null);
+  } catch (e) {
+    print('Se produjo un error: \$e');
+  } finally {
+    print('Continuando con otras tareas');
+  }
+}</code></pre>
+
+          <h3>Tipos de Excepciones</h3>
+          <p>Dart proporciona varios tipos de excepciones predefinidas, como <code>ArgumentError</code>, <code>FormatException</code>, <code>RangeError</code>, entre otros. Puedes utilizar estos tipos de excepciones o crear tus propias excepciones personalizadas.</p>
+          <pre><code>// Función que lanza una excepción personalizada
+void lanzarExcepcionPersonalizada() {
+  throw FormatException('Se produjo un error de formato');
+}
+
+void main() {
+  try {
+    lanzarExcepcionPersonalizada();
+  } catch (e) {
+    print('Se produjo un error: \$e');
+  }
+}</code></pre>
+
+          <h3>Manejo de Errores Asíncronos</h3>
+          <p>Cuando manejas errores en operaciones asíncronas, puedes utilizar <code>catchError</code> o <code>onError</code> para capturar errores que ocurran en un <code>Future</code> o un <code>Stream</code>.</p>
+          <pre><code>// Función asíncrona que simula una operación de espera
+Future<void> esperar() async {
+  throw Exception('Se produjo un error durante la espera');
+}
+
+void main() {
+  esperar().catchError((e) {
+    print('Se produjo un error: \$e');
+  });
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.content -->
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Curso de Dart &copy; 2024</span>
+    </div>
+  </footer>
+  <!-- /.footer -->
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
